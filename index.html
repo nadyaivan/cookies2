@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<body>
+<script language="JavaScript" type="text/javascript">
+    function setCookie(cookie_name, cookie_value) {
+        let cookie_string = cookie_name + "=" + cookie_value;
+        document.cookie = cookie_string;
+    }
+        function getCookie(cookie_name) {
+        let results = document.cookie.match(
+          "(^|;) ?" + cookie_name + "=([^;]*)(;|$)"
+        );
+
+        if (results) return unescape(results[2]);
+        else return null;
+      }
+
+    function color(){
+        let color =  getCookie("color");
+        document.querySelector("body").style.backgroundColor = color;
+    }
+    // let mycolor = `#8c4646`;
+    let mycolor = `#cc2a2a`;
+    setCookie("color",`${mycolor}`);
+    color();
+</script>
+</body>
+</html>
